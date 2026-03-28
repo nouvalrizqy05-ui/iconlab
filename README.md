@@ -369,4 +369,400 @@ Terdiri dari 5 section besar:
 
 | # | Section | Deskripsi |
 |---|---|---|
-| 1 | **Hero Section** | Logo ICONLAB, tema, tagline, tombol CTA, countdown timer, elemen arcade interaktif (tombol merah/biru/
+| 1 | **Hero Section** | Logo ICONLAB, tema, tagline, tombol CTA, countdown timer, elemen arcade interaktif (tombol merah/biru/hijau, coin slot, joystick) |
+| 2 | **Select Quest** | Grid 4-kolom kartu kompetisi (Game Dev, LKTI, E-Sports, Workshop) dengan badge floating dan tombol "Read More" |
+| 3 | **Timeline** | Viewer interaktif dengan navigasi kiri/kanan untuk melihat timeline tiap kompetisi |
+| 4 | **Sponsors & Partners** | Dua marquee: baris atas (sponsor - scroll kiri), baris bawah (media partner - scroll kanan) |
+| 5 | **FAQ** | Accordion FAQ umum seputar ICONLAB 2026 |
+
+### 2. 📋 Event Detail Page (`event/{id}`)
+
+Tersedia untuk: `gamedev`, `lkti`, `mlbb`, `workshop`
+
+| # | Section | Deskripsi |
+|---|---|---|
+| 1 | **Hero** | Ikon floating, judul kompetisi (image), countdown/status |
+| 2 | **Action Buttons** | Tombol "RULEBOOK" dan "JOIN QUEST" (link ke Google Forms) |
+| 3 | **Mission Info** | Deskripsi lengkap kompetisi |
+| 4 | **Requirements** | Daftar persyaratan peserta |
+| 5 | **Timeline** | Grid timeline langkah-langkah kompetisi |
+| 6 | **Rewards** | Podium arcade (Juara 1-3) + deskripsi hadiah |
+| 7 | **Scoring Criteria** | Grid kriteria penilaian (jika ada) |
+| 8 | **Contact & FAQ** | Kontak narahubung + FAQ per kompetisi |
+
+### 3. 👥 About Page (`about`)
+
+| # | Section | Deskripsi |
+|---|---|---|
+| 1 | **Tentang Kami** | Penjelasan tentang ICONLAB dan temanya |
+| 2 | **Select Character** | Grid placeholder untuk anggota panitia (8 slot) |
+
+### 4. 💼 Sponsorship Page (`sponsorship`)
+
+| # | Section | Deskripsi |
+|---|---|---|
+| 1 | **Why Choose Us** | Keunggulan beriklan di ICONLAB |
+| 2 | **Upgrade Items** | 4 paket sponsorship (Diamond, Platinum, Gold, Silver) |
+| 3 | **Contact Us** | Kontak Sponsorship Manager |
+| 4 | **Media Partner** | Informasi kolaborasi media partner + kontak |
+
+---
+
+## 📁 Struktur Folder & File
+
+```
+ICON KUNING/
+├── index.html                  # Entry point HTML
+├── package.json                # Dependencies & scripts
+├── vite.config.js              # Konfigurasi Vite + plugin
+├── eslint.config.js            # Konfigurasi ESLint
+├── .gitignore                  # File yang diabaikan Git
+│
+├── public/                     # Aset statis (served as-is)
+│   ├── ICONLAB.png             # Logo utama ICONLAB
+│   ├── Tema.png                # Gambar tema acara
+│   ├── Group 459.png           # Banner "Jangan Sampai Ketinggalan"
+│   ├── Group 468.png           # Gambar tagline
+│   ├── Group 469.png           # Aset dekoratif
+│   ├── JADWAL ACARA.png        # Heading jadwal acara
+│   ├── coin.svg                # Ikon koin arcade
+│   ├── favicon.svg             # Favicon website
+│   ├── icons.svg               # Koleksi ikon SVG
+│   ├── logo-icn.png            # Logo ICN (kecil)
+│   ├── logo-hima.png           # Logo HIMA ILKOM
+│   ├── Logo-unnes.jpg          # Logo Universitas Negeri Semarang
+│   ├── Logo-astasae.png        # Logo ASTASAE
+│   ├── lubang koin.png         # Gambar slot koin
+│   │
+│   ├── Lomba/                  # Logo judul kompetisi
+│   │   ├── GameDev 2.png
+│   │   ├── LKTI 2.png
+│   │   ├── Mobile Legend 2.png
+│   │   └── WORKSHOP 2.png
+│   │
+│   ├── corner/                 # Dekorasi sudut halaman
+│   │   ├── Group 36.png        # Sudut kanan atas
+│   │   └── Group 37.png        # Sudut kiri atas
+│   │
+│   ├── icon/                   # Ikon SVG dekoratif
+│   │   ├── Star 1.svg          # Bintang utama (untuk StarDecoration)
+│   │   ├── Vector.svg
+│   │   └── _x*.svg             # 18 ikon pixel art dekoratif
+│   │
+│   ├── judulsec/               # Gambar judul section
+│   │   ├── Faq.png             # Heading FAQ
+│   │   ├── Sponsorship.png     # Heading Sponsorship
+│   │   └── Tntang Kami.png     # Heading Tentang Kami
+│   │
+│   └── medpart/                # Logo media partner
+│       ├── Logo HMIF ITERA.jpg
+│       ├── Logo OmahTI (black).png
+│       └── LOGO @INFOLOMBA (...).png
+│
+└── src/                        # Source code React
+    ├── main.jsx                # Entry point React (StrictMode + render)
+    ├── App.jsx                 # Seluruh aplikasi (2023 baris)
+    ├── App.css                 # CSS tambahan (legacy Vite scaffold)
+    ├── index.css               # CSS entry (Tailwind import)
+    ├── assets/                 # Aset yang diproses Vite
+    └── hooks/
+        └── useScrollReveal.js  # Custom hook: Intersection Observer
+```
+
+---
+
+## ⚛️ Komponen React
+
+Seluruh komponen didefinisikan dalam satu file `App.jsx`. Berikut daftar lengkapnya:
+
+### Komponen Utama
+
+| Komponen | Baris | Deskripsi |
+|---|---|---|
+| `App` | 764 | Root component, state routing, transisi halaman |
+| `Navbar` | 814 | Navigation bar fixed atas, dropdown quests, menu mobile |
+| `Countdown` | 924 | Hitung mundur utama menuju 23 April 2026 |
+| `HomePage` | 973 | Landing page dengan 5 section besar |
+| `EventDetailPage` | 1325 | Halaman detail per kompetisi |
+| `AboutPage` | 1671 | Halaman tentang kami |
+| `SponsorshipPage` | 1744 | Halaman paket sponsorship |
+| `Footer` | 1869 | Footer global dengan link, sosmed, dan kontak |
+
+### Komponen Dekoratif
+
+| Komponen | Deskripsi |
+|---|---|
+| `ColorfulText` | Teks dengan setiap huruf berwarna berbeda (merah → oren → kuning → hijau → biru) + efek glow |
+| `PixelCloud` | Awan pixel 3-bagian yang bergerak horizontal |
+| `PixelTooltip` | Tooltip bergaya pixel yang muncul saat hover elemen arcade |
+| `MinecraftStar` | Bintang kecil pixel (varian putih bulat dan kuning kotak) |
+| `MinecraftStarDecoration` | Kontainer bintang Minecraft tersebar di section |
+| `SectionDecoration` | Ikon SVG dekoratif yang mengambang di section |
+| `StarDecoration` | Bintang SVG `Star 1.svg` tersebar melingkar |
+| `PixelTransition` | Grid blok warna-warni untuk animasi transisi halaman |
+
+### Komponen Pendukung
+
+| Komponen | Deskripsi |
+|---|---|
+| `TimelineViewer` | Timeline interaktif dengan navigasi kiri/kanan per kompetisi |
+| `FAQItem` | Accordion FAQ dengan badge warna dan animasi expand |
+| `PrizeBox` | Kotak hadiah bergaya podium dengan efek hover |
+| `CountdownInternal` | Countdown kecil (HH:MM:SS) untuk halaman detail event |
+| `ContactCard` | Kartu kontak narahubung dengan link WhatsApp |
+
+### Custom Hooks
+
+| Hook | File | Deskripsi |
+|---|---|---|
+| `useScrollReveal` | `hooks/useScrollReveal.js` | Intersection Observer hook untuk animasi scroll-reveal |
+
+---
+
+## 🖼️ Aset Publik
+
+### Logo Organisasi
+
+| File | Deskripsi |
+|---|---|
+| `ICONLAB.png` | Logo utama ICON.LAB |
+| `logo-icn.png` | Logo ICN (ikon kecil, favicon) |
+| `logo-hima.png` | Logo Himpunan Mahasiswa Ilmu Komputer |
+| `Logo-unnes.jpg` | Logo Universitas Negeri Semarang |
+| `Logo-astasae.png` | Logo ASTASAE |
+
+### Logo Kompetisi (`/Lomba/`)
+
+| File | Kompetisi |
+|---|---|
+| `GameDev 2.png` | Game Development |
+| `LKTI 2.png` | Lomba KTI |
+| `Mobile Legend 2.png` | E-Sports MLBB |
+| `WORKSHOP 2.png` | Workshop IT |
+
+### Judul Section (`/judulsec/`)
+
+| File | Section |
+|---|---|
+| `Faq.png` | Heading FAQ |
+| `Sponsorship.png` | Heading Sponsorship |
+| `Tntang Kami.png` | Heading Tentang Kami |
+
+### Dekorasi (`/corner/`, `/icon/`)
+
+| File | Deskripsi |
+|---|---|
+| `Group 36.png` | Dekorasi sudut kanan atas hero |
+| `Group 37.png` | Dekorasi sudut kiri atas hero |
+| `Star 1.svg` | Bintang utama untuk StarDecoration |
+| `_x*.svg` (18 file) | Ikon pixel art dekoratif |
+
+### Media Partner (`/medpart/`)
+
+| File | Media Partner |
+|---|---|
+| `Logo HMIF ITERA.jpg` | HMIF ITERA |
+| `Logo OmahTI (black).png` | OmahTI |
+| `LOGO @INFOLOMBA (...).png` | InfoLomba |
+
+---
+
+## 📅 Timeline Acara
+
+### Game Development
+
+| Tanggal | Kegiatan |
+|---|---|
+| 29 Maret – 5 April 2026 | Open Early Bird |
+| 7 – 19 April 2026 | Open Registration Batch 1 |
+| 21 April – 8 Mei 2026 | Open Registration Batch 2 |
+| 9 Mei 2026 | Technical Meeting |
+| 11 Mei 2026 | Batas Pengumpulan Game, GDD, dan Video Demo Game |
+| 11 – 15 Mei 2026 | Penilaian Submisi |
+| 16 Mei 2026 | Pengumuman Finalis |
+| 17 Mei 2026 | Technical Meeting Final |
+| **23 Mei 2026** | **Final & Awarding** |
+
+### Lomba KTI
+
+| Tanggal | Kegiatan |
+|---|---|
+| 29 Maret – 5 April 2026 | Open Early Bird |
+| 7 – 19 April 2026 | Open Registration Batch 1 |
+| 21 April – 8 Mei 2026 | Open Registration Batch 2 |
+| 9 Mei 2026 | Technical Meeting |
+| 11 Mei 2026 | Deadline Pengumpulan Full Paper |
+| 12 – 15 Mei 2026 | Penilaian Full Paper |
+| 16 Mei 2026 | Pengumuman Finalist |
+| 17 Mei 2026 | Technical Meeting Finalist |
+| **23 Mei 2026** | **Grand Final & Awarding** |
+
+### E-Sports (MLBB)
+
+| Tanggal | Kegiatan |
+|---|---|
+| 29 Maret – 5 April 2026 | Open Early Bird |
+| 7 – 19 April 2026 | Open Registration Batch 1 |
+| 21 April – 8 Mei 2026 | Open Registration Batch 2 |
+| 9 Mei 2026 | Technical Meeting |
+| 10 Mei 2026 | Babak Penyisihan (Online) |
+| **16 Mei 2026** | **Semifinal, Juara 3, & Final (Offline)** |
+
+---
+
+## 💎 Paket Sponsorship
+
+| Paket | Harga | Benefits |
+|---|---|---|
+| 💠 **DIAMOND** | > Rp 600.000 | Publication (XL), Live Ads 2x (15s), MC Mention 6x, Ad-Lips 4x, IG Story 4x/minggu, Full Day Booth, Speech Vendor |
+| 🔷 **PLATINUM** | Rp 400.000 | Publication (L), Live Ads 1x (15s), MC Mention 4x, Ad-Lips 3x, IG Story 3x/minggu, Workshop Booth, Vendor Ads 1x |
+| 🥇 **GOLD** | Rp 300.000 | Publication (M), Live Ads 1x (10s), MC Mention 3x, Ad-Lips 2x, IG Story 1x/minggu |
+| 🥈 **SILVER** | Rp 150.000 | Publication (S), Live Ads 1x (10s), MC Mention 2x, Ad-Lips 1x, IG Story 1x Post |
+
+**Kontak Sponsorship:**
+- Fardhan — Sponsorship Manager (+62 812 1249 5750)
+- Tika — Sponsorship Manager (+62 895 0954 1898)
+
+---
+
+## 🤝 Media Partner
+
+Media partner yang sudah tergabung:
+
+| Logo | Nama |
+|---|---|
+| ![HMIF ITERA](public/medpart/Logo%20HMIF%20ITERA.jpg) | HMIF ITERA |
+| ![OmahTI](public/medpart/Logo%20OmahTI%20(black).png) | OmahTI |
+| ![InfoLomba](public/medpart/LOGO%20@INFOLOMBA%20(Untuk%20Background%20Poster%20Warna%20Gelap).png) | InfoLomba (@INFOLOMBA) |
+
+**Kontak Media Partner:**
+- Danda — Press & Media (+62 858 4877 9513)
+- Docill — Collaboration Partner (+62 877 7172 7353)
+
+---
+
+## ❓ FAQ Umum
+
+| # | Pertanyaan | Jawaban |
+|---|---|---|
+| 1 | **Apa itu ICONLAB 2026?** | Informatics Competition & Innovation Lab (ICONLAB) 2026 adalah ajang kompetisi teknologi nasional yang mewadahi kreativitas dan inovasi mahasiswa dalam mendukung SDGs era Society 5.0. |
+| 2 | **Apa saja cabang kompetisi?** | Game Development, Lomba Karya Tulis Ilmiah (LKTI), dan Mobile Legends: Bang Bang (MLBB). |
+| 3 | **Siapa saja yang boleh menjadi peserta?** | Mahasiswa aktif seluruh perguruan tinggi Indonesia (GameDev & LKTI) serta pelajar/umum (MLBB & Workshop). |
+| 4 | **Bagaimana sistem pendaftaran?** | Secara daring melalui website resmi. Detail biaya ada di Guidebook masing-masing cabang. |
+| 5 | **Daring atau luring?** | Hybrid. Tahap awal daring, babak Final & Workshop dilaksanakan secara luring. |
+| 6 | **Di mana Guidebook resmi?** | Dapat diunduh via tombol "RULEBOOK" di halaman detail kompetisi. |
+
+---
+
+## 📞 Kontak & Sosial Media
+
+### Kontak Umum
+
+| Nama | Role | Kontak |
+|---|---|---|
+| Sulthan | Narahubung Umum | +62 813 6927 4302 (WA) |
+| Zahra | Narahubung Umum | +62 822 4146 7806 (WA) |
+
+### Kontak Per Kompetisi
+
+| Kompetisi | Nama | Kontak |
+|---|---|---|
+| Game Dev | Wira | +62 895 7033 78080 |
+| LKTI | Selma | +62 889 8060 2427 |
+| MLBB | Damar | +62 822 7986 2622 |
+
+### Kontak Sponsorship
+
+| Nama | Role | Kontak |
+|---|---|---|
+| Fardhan | Sponsorship Manager | +62 812 1249 5750 |
+| Tika | Sponsorship Manager | +62 895 0954 1898 |
+
+### Kontak Media Partner
+
+| Nama | Role | Kontak |
+|---|---|---|
+| Danda | Press & Media | +62 858 4877 9513 |
+| Docill | Collaboration Partner | +62 877 7172 7353 |
+
+### Sosial Media
+
+| Platform | Link |
+|---|---|
+| 📸 Instagram | [@iconlab.ilkom](https://www.instagram.com/iconlab.ilkom/) |
+| ▶️ YouTube | [HIMA ILKOM UNNES](https://youtube.com/@himailkomunnes271?si=gQavx0wOnTW3L_4F) |
+| 📧 Email | iconlabilkomunnes@gmail.com |
+
+---
+
+## 🚀 Instalasi & Menjalankan
+
+### Prasyarat
+
+- **Node.js** versi 18 atau lebih baru
+- **npm** (sudah termasuk dalam Node.js)
+
+### Langkah Instalasi
+
+```bash
+# 1. Clone atau buka folder proyek
+cd "ICON KUNING"
+
+# 2. Install semua dependencies
+npm install
+
+# 3. Jalankan development server
+npm run dev
+```
+
+Development server akan berjalan di `http://localhost:5173` (default Vite).
+
+### Scripts Tersedia
+
+| Script | Perintah | Deskripsi |
+|---|---|---|
+| `dev` | `npm run dev` | Menjalankan development server Vite |
+| `build` | `npm run build` | Build production bundle |
+| `preview` | `npm run preview` | Preview hasil build production |
+| `lint` | `npm run lint` | Jalankan ESLint untuk cek kualitas kode |
+
+---
+
+## 📦 Build untuk Produksi
+
+```bash
+# Build production bundle
+npm run build
+
+# Preview hasil build
+npm run preview
+```
+
+Output build akan disimpan di folder `dist/`.
+
+---
+
+## 🏛️ Penyelenggara
+
+<table>
+  <tr>
+    <td align="center"><strong>Universitas Negeri Semarang</strong></td>
+    <td align="center"><strong>HIMA ILKOM UNNES</strong></td>
+    <td align="center"><strong>ASTASAE</strong></td>
+    <td align="center"><strong>ICON.LAB</strong></td>
+  </tr>
+</table>
+
+**ICONLAB 2026** diselenggarakan oleh **Himpunan Mahasiswa Ilmu Komputer (HIMA ILKOM)** Universitas Negeri Semarang sebagai acara IT tahunan unggulan, menghadirkan para pionir untuk berinovasi, berkompetisi, dan berkolaborasi.
+
+---
+
+## 📜 Lisensi
+
+Proyek ini bersifat **Private** dan merupakan milik **HIMA ILKOM UNNES**. Semua hak cipta dilindungi.
+
+---
+
+<p align="center">
+  <strong>© 2026 HIMA ILKOM UNNES — GAME OVER? NEVER. 🕹️</strong>
+</p>
