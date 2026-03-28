@@ -1193,9 +1193,19 @@ function HomePage({ navigate }) {
 
         <div className="relative w-full overflow-hidden mb-6 md:mb-8">
           <div className="animate-marquee-right flex gap-4 md:gap-8 px-4">
-            {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((i, idx) => (
-              <div key={idx} className="bg-[#030841] w-24 h-16 sm:w-40 sm:h-24 md:w-56 md:h-32 border-2 md:border-4 border-white flex justify-center items-center overflow-hidden flex-shrink-0 shadow-[4px_4px_0_#000] md:shadow-[6px_6px_0_#000]">
-                <span className="font-pixel text-xs sm:text-lg text-[#00AAFF]">MEDIA {i}</span>
+            {[
+              { src: '/medpart/Logo HMIF ITERA.jpg', alt: 'HMIF ITERA' },
+              { src: '/medpart/Logo OmahTI (black).png', alt: 'OmahTI' },
+              { src: '/medpart/LOGO @INFOLOMBA (Untuk Background Poster Warna Gelap).png', alt: 'InfoLomba' },
+              { src: '/medpart/Logo HMIF ITERA.jpg', alt: 'HMIF ITERA' },
+              { src: '/medpart/Logo OmahTI (black).png', alt: 'OmahTI' },
+              { src: '/medpart/LOGO @INFOLOMBA (Untuk Background Poster Warna Gelap).png', alt: 'InfoLomba' },
+              { src: '/medpart/Logo HMIF ITERA.jpg', alt: 'HMIF ITERA' },
+              { src: '/medpart/Logo OmahTI (black).png', alt: 'OmahTI' },
+              { src: '/medpart/LOGO @INFOLOMBA (Untuk Background Poster Warna Gelap).png', alt: 'InfoLomba' },
+            ].map((logo, idx) => (
+              <div key={idx} className="bg-white w-24 h-16 sm:w-40 sm:h-24 md:w-56 md:h-32 border-2 md:border-4 border-white flex justify-center items-center overflow-hidden flex-shrink-0 shadow-[4px_4px_0_#000] md:shadow-[6px_6px_0_#000] p-2 md:p-4">
+                <img src={logo.src} alt={logo.alt} className="max-w-full max-h-full object-contain" />
               </div>
             ))}
           </div>
