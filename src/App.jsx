@@ -51,7 +51,7 @@ const eventData = {
     shortDesc: "Wadah bagi mahasiswa untuk mengembangkan kreativitas serta kemampuan dalam merancang dan membangun game yang inovatif, interaktif, dan menarik.",
     fullDesc: "Lomba Game Development merupakan salah satu cabang kompetisi yang diselenggarakan oleh Himpunan Mahasiswa Ilmu Komputer UNNES dalam rangka ICONLAB 2026 dengan tema \"Innovating Technology for Sustainable Society 5.0\". Kompetisi dilaksanakan dalam dua tahap, yaitu babak penyisihan dan babak final. Pada tahap penyisihan, peserta mengumpulkan game, Game Design Document (GDD), dan video demo. Tim terbaik akan melaju ke babak final yang diselenggarakan secara luring di Universitas Negeri Semarang untuk melakukan presentasi dan demonstrasi karya. Melalui kompetisi ini, peserta diharapkan dapat bertukar ilmu, pengalaman, dan inovasi dalam bidang pengembangan game.",
     date: "23 Mei 2026",
-    prize: "Juara 1-3: Piala + Sertifikat + Uang pembinaan, Juara Harapan 1-2: E-Sertifikat + Piala",
+    prize: "Juara 1-3: Uang Pembinaan + Piagam + Sertifikat, Juara Harapan 1-2: Piagam + Sertifikat",
     requirements: [
       "Mahasiswa aktif (D3/D4/S1) perwakilan PTN/PTS se-Indonesia",
       "Tema wajib berkaitan dengan salah satu dari 17 poin SDGs",
@@ -106,7 +106,7 @@ const eventData = {
     shortDesc: "Wadah bagi mahasiswa menuangkan ide dan inovasi teknologi berbasis SDGs melalui karya tulis ilmiah yang kreatif dan aplikatif.",
     fullDesc: "Lomba Karya Tulis Ilmiah (LKTI) ICONLAB 2026 mengusung tema \"Innovating Technology For Sustainable Society 5.0\". Kompetisi ini mendorong mahasiswa untuk mengembangkan gagasan kreatif dan solutif berbasis teknologi yang mampu menjawab berbagai permasalahan masyarakat secara nyata dan berkelanjutan. Terbagi menjadi dua tahap: babak penyisihan (daring) menyaring lima tim terbaik untuk melaju ke babak Grand Final (luring) di Universitas Negeri Semarang. Setiap tim wajib dibimbing oleh satu tenaga pendidik sebagai pembimbing.",
     date: "23 Mei 2026",
-    prize: "Juara 1-3: Piala + e-sertifikat + Uang, Juara Harapan 1-2: Piala + e-sertifikat",
+    prize: "Juara 1-3: Uang Pembinaan + Piagam + Sertifikat, Juara Harapan 1-2: Piagam + Sertifikat",
     requirements: [
       "Mahasiswa aktif D3/D4/S1 PTN/PTS se-Indonesia (WNI)",
       "Tim terdiri dari 3 orang dari instansi yang sama (1 ketua + 2 anggota)",
@@ -159,7 +159,7 @@ const eventData = {
     shortDesc: "Turnamen E-Sports MLBB antar masyarakat umum Kota Semarang. Buktikan timmu!",
     fullDesc: "Siapkan tim terbaikmu untuk bertarung di turnamen Mobile Legends: Bang Bang ICONLAB 2026! Kompetisi ini mencari tim E-Sports dengan mekanik makro dan mikro terbaik. Pertandingan terdiri dari Babak Penyisihan (online BO1), Semifinal (offline BO3), dan Grand Final (offline BO5). Buktikan strategi dan kekompakan tim kalian!",
     date: "16 Mei 2026",
-    prize: "Piala + e-Sertifikat + Uang Tunai",
+    prize: "Uang Tunai + Piagam + Sertifikat",
     requirements: [
       "Masyarakat umum Kota Semarang",
       "1 Tim terdiri dari 5 pemain inti dan 1 pemain cadangan",
