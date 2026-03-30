@@ -91,7 +91,8 @@ const eventData = {
     contacts: [
       { name: "Wira", role: "Narahubung", contact: "+62 895 7033 78080", type: "wa", icon: "W", color: "bg-[#FF1111]" }
     ],
-    registrationLink: "https://forms.gle/WKCuZKazMqogQcNZ8"
+    registrationLink: "https://forms.gle/WKCuZKazMqogQcNZ8",
+    rulebookLink: "https://drive.google.com/drive/folders/1u4zB_gi5OeBx2FCE9aybMbohNpg2GbFY?usp=drive_link"
   },
   lkti: {
     id: 'lkti',
@@ -144,7 +145,8 @@ const eventData = {
     contacts: [
       { name: "Selma", role: "Narahubung", contact: "+62 889 8060 2427", type: "wa", icon: "S", color: "bg-[#00AAFF]" }
     ],
-    registrationLink: "https://forms.gle/4CGJZP4hkvT334iAA"
+    registrationLink: "https://forms.gle/4CGJZP4hkvT334iAA",
+    rulebookLink: "https://drive.google.com/drive/folders/1Yp0KxYB8yhlFcoBuU2AqaVLzo9QJPJSG?usp=drive_link"
   },
   mlbb: {
     id: 'mlbb',
@@ -195,7 +197,8 @@ const eventData = {
     contacts: [
       { name: "Damar", role: "Narahubung", contact: "+62 822 7986 2622", type: "wa", icon: "D", color: "bg-[#FF8800]" }
     ],
-    registrationLink: "https://forms.gle/aTEH3d9xt6wJLZL69"
+    registrationLink: "https://forms.gle/aTEH3d9xt6wJLZL69",
+    rulebookLink: "https://drive.google.com/drive/folders/1GqGG8Kbyy-iQ_eNYyn_E3FGqaz3ompbs?usp=drive_link"
   }
 };
 
@@ -1397,19 +1400,19 @@ function EventDetailPage({ eventId, navigate }) {
 
         {/* Action Buttons */}
         <div className="relative z-20 flex flex-col sm:flex-row gap-4 md:gap-8 justify-center w-full max-w-2xl px-4">
-          <a 
-            href={eventId === 'workshop' ? "#" : "https://bit.ly/RulebookICONLAB2026"} 
-            target={eventId === 'workshop' ? "_self" : "_blank"} 
-            rel="noreferrer" 
+          <a
+            href={eventId === 'workshop' ? "#" : (ev.rulebookLink || "https://bit.ly/RulebookICONLAB2026")}
+            target={eventId === 'workshop' ? "_self" : "_blank"}
+            rel="noreferrer"
             onClick={(e) => eventId === 'workshop' && e.preventDefault()}
             className={`btn-arcade blue w-full !py-4 md:!py-6 text-sm md:text-xl flex items-center justify-center gap-2 ${eventId === 'workshop' ? 'opacity-50 cursor-not-allowed grayscale pointer-events-none' : ''}`}
           >
             <FileText className="w-5 h-5 md:w-8 md:h-8" /> RULEBOOK
           </a>
-          <a 
-            href={eventId === 'workshop' ? "#" : (ev.registrationLink || GOOGLE_FORM_LINK)} 
-            target={eventId === 'workshop' ? "_self" : "_blank"} 
-            rel="noreferrer" 
+          <a
+            href={eventId === 'workshop' ? "#" : (ev.registrationLink || GOOGLE_FORM_LINK)}
+            target={eventId === 'workshop' ? "_self" : "_blank"}
+            rel="noreferrer"
             onClick={(e) => eventId === 'workshop' && e.preventDefault()}
             className={`btn-arcade green w-full !py-4 md:!py-6 text-sm md:text-xl flex items-center justify-center gap-2 ${eventId === 'workshop' ? 'opacity-50 cursor-not-allowed grayscale pointer-events-none' : ''}`}
           >
@@ -1669,7 +1672,18 @@ function CountdownInternal({ targetDate }) {
 }
 
 function AboutPage() {
-  const divisi = ['Dev Ops', 'Sys Admin', 'Finance', 'Event Handler', 'Public Relations', 'Media', 'Funding'];
+  const kepanitiaan = [
+    { divisi: "SC", theme: "bg-[#FF1166]", members: [{name: "Yaafi", role: ""}] },
+    { divisi: "Ketua", theme: "bg-[#FF1166]", members: [{name: "Sulthan", role: ""}] },
+    { divisi: "Sekretaris", theme: "bg-[#FFDF00]", members: [{name: "Jennie", role: "K"}, {name: "Caca", role: "WK"}] },
+    { divisi: "Bendahara", theme: "bg-[#FFDF00]", members: [{name: "Karin", role: "K"}, {name: "Rian", role: "WK"}] },
+    { divisi: "Kreatif", theme: "bg-[#FFDF00]", members: [{name: "Nabila", role: "K"}, {name: "Ardin", role: "WK"}, {name: "Lily", role: ""}, {name: "Hasya", role: ""}, {name: "Uma", role: ""}, {name: "Pelita", role: "I"}] },
+    { divisi: "Perkap", theme: "bg-[#66D9E8]", members: [{name: "Nouval Ar", role: "K"}, {name: "Rizki", role: "WK"}, {name: "Naufal I", role: ""}, {name: "Dariel", role: ""}, {name: "Adjie", role: ""}] },
+    { divisi: "PDD", theme: "bg-[#66D9E8]", members: [{name: "Satria", role: "K"}, {name: "Muti", role: "WK"}, {name: "Aqmar", role: ""}, {name: "Hakim", role: ""}, {name: "Aurel", role: ""}] },
+    { divisi: "Humas", theme: "bg-[#66D9E8]", members: [{name: "Zahra A", role: "K"}, {name: "Silfia", role: "WK"}, {name: "Naila", role: ""}, {name: "Raza", role: ""}, {name: "Putri", role: "I"}] },
+    { divisi: "Acara", theme: "bg-[#8CE99A]", members: [{name: "Elsa", role: "K"}, {name: "Selma", role: "WK"}, {name: "Wira", role: ""}, {name: "Eliz", role: ""}, {name: "Damar", role: ""}, {name: "Reza", role: ""}] },
+    { divisi: "Sponsor", theme: "bg-[#8CE99A]", members: [{name: "Fardhan", role: "K"}, {name: "Docil", role: "WK"}, {name: "Tika", role: ""}, {name: "Danda", role: ""}, {name: "Azza", role: ""}] },
+  ];
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-6 md:pt-10 text-center z-10 relative pb-16 md:pb-20">
@@ -1694,25 +1708,45 @@ function AboutPage() {
         </p>
       </div>
 
-      <div className="mb-8 md:mb-12 text-center">
+      <div className="mb-8 md:mb-12 text-center mt-8">
         <h2 className="font-pixel text-lg sm:text-2xl md:text-4xl text-black inline-block bg-white px-4 md:px-6 py-2 border-2 md:border-4 border-black shadow-[4px_4px_0_#000] md:shadow-[6px_6px_0_#000]">
-          SELECT CHARACTER
+          KEPANITIAAN
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10">
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-          <div key={item} className="pixel-window-light !p-2 md:!p-4 flex flex-col items-center hover:-translate-y-2 md:hover:-translate-y-4 transition-transform group cursor-pointer bg-white">
-            <div className="w-full h-24 md:h-32 bg-[#030841] border-2 md:border-4 border-black mb-3 md:mb-4 relative overflow-hidden flex items-end justify-center">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-[#00AAFF] border-2 md:border-4 border-black shadow-[inset_2px_2px_0_rgba(255,255,255,0.4)] md:shadow-[inset_4px_4px_0_rgba(255,255,255,0.4)] transition-transform group-hover:scale-110 mb-[-6px] md:mb-[-10px]">
-                <div className="flex justify-between px-1 md:px-2 mt-2 md:mt-4">
-                  <div className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-full"></div>
-                  <div className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-full"></div>
-                </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 items-start">
+        {kepanitiaan.map((item, idx) => (
+          <div key={idx} className="pixel-window-light !p-0 flex flex-col bg-[#EFEFEF] shadow-[4px_4px_0_rgba(0,0,0,0.8)] md:shadow-[8px_8px_0_rgba(0,0,0,0.8)] h-fit relative rounded-[4px] md:rounded-[8px] overflow-hidden border-2 md:border-4 border-black">
+            {/* Header */}
+            <div className={`px-2 py-2 border-b-2 md:border-b-4 border-black ${item.theme} flex justify-between items-center shadow-[inset_0_-2px_0_rgba(0,0,0,0.1)]`}>
+              <h3 className="font-pixel text-[10px] md:text-sm text-black">{item.divisi}</h3>
+              <div className="w-4 h-4 md:w-5 md:h-5 bg-[#00AAFF] border-2 border-black flex items-center justify-center shadow-[1px_1px_0_#000]">
+                <span className="font-pixel text-[8px] md:text-[10px] text-white">x</span>
               </div>
             </div>
-            <h3 className="font-pixel text-[10px] md:text-sm text-black bg-white px-1 md:px-2 mb-1 md:mb-2 w-full border-b border-dashed border-gray-300 pb-1 md:pb-2">USER_{item}</h3>
-            <p className="font-pixel text-[8px] md:text-[10px] text-gray-500">{divisi[item % divisi.length]}</p>
+            
+            {/* Content */}
+            <div className="p-3 md:p-4 flex-grow flex flex-col relative bg-[#EFEFEF]">
+              <ul className="space-y-1 md:space-y-2 mb-8 font-VT323 text-lg md:text-2xl font-bold flex-grow text-black text-left">
+                {item.members.map((m, i) => (
+                  <li key={i} className="flex justify-between items-center gap-2 pb-1">
+                    <span className="truncate">{m.name}</span>
+                    {m.role && (
+                      <span className={`text-[8px] font-pixel px-1.5 py-0.5 border-2 border-black shadow-[2px_2px_0_#000] flex-shrink-0 text-black ${m.role === 'K' ? 'bg-[#FFDF00]' : m.role === 'WK' ? 'bg-[#38BDF8]' : 'bg-[#FF8800]'}`}>
+                        {m.role}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Custom Yes Button */}
+               <div className="w-full flex justify-center -mb-2 mt-4 relative z-10 bottom-2">
+                 <button className="bg-[#4CAF50] border-2 md:border-3 border-black px-3 py-1 font-pixel text-[8px] md:text-[10px] text-white shadow-[2px_2px_0_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer">
+                    Yes
+                 </button>
+               </div>
+            </div>
           </div>
         ))}
       </div>
