@@ -61,7 +61,7 @@ const eventData = {
       "Karya bersifat orisinal dan tidak mengandung unsur SARA"
     ],
     timeline: [
-      { date: '29 Maret - 5 April 2026', step: 'Open Early Bird' },
+      { date: '30 Maret - 5 April 2026', step: 'Open Early Bird' },
       { date: '7 - 19 April 2026', step: 'Open Registration Batch 1' },
       { date: '21 April - 8 Mei 2026', step: 'Open Registration Batch 2' },
       { date: '9 Mei 2026', step: 'Technical Meeting' },
@@ -116,7 +116,7 @@ const eventData = {
       "Tidak mengandung unsur SARA dan pornografi"
     ],
     timeline: [
-      { date: '29 Maret - 5 April 2026', step: 'Open Early Bird' },
+      { date: '30 Maret - 5 April 2026', step: 'Open Early Bird' },
       { date: '7 - 19 April 2026', step: 'Open Registration Batch 1' },
       { date: '21 April - 8 Mei 2026', step: 'Open Registration Batch 2' },
       { date: '9 Mei 2026', step: 'Technical Meeting' },
@@ -169,7 +169,7 @@ const eventData = {
       "Bermain sportif, no cheat/hack, no emulator"
     ],
     timeline: [
-      { date: '29 Maret - 5 April 2026', step: 'Open Early Bird' },
+      { date: '30 Maret - 5 April 2026', step: 'Open Early Bird' },
       { date: '7 - 19 April 2026', step: 'Open Registration Batch 1' },
       { date: '21 April - 8 Mei 2026', step: 'Open Registration Batch 2' },
       { date: '9 Mei 2026', step: 'Technical Meeting' },
