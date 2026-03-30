@@ -1714,9 +1714,9 @@ function AboutPage() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 items-start">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 items-stretch">
         {kepanitiaan.map((item, idx) => (
-          <div key={idx} className="pixel-window-light !p-0 flex flex-col bg-[#EFEFEF] shadow-[4px_4px_0_rgba(0,0,0,0.8)] md:shadow-[8px_8px_0_rgba(0,0,0,0.8)] h-fit relative rounded-[4px] md:rounded-[8px] overflow-hidden border-2 md:border-4 border-black">
+          <div key={idx} className="pixel-window-light !p-0 flex flex-col bg-[#EFEFEF] shadow-[4px_4px_0_rgba(0,0,0,0.8)] md:shadow-[8px_8px_0_rgba(0,0,0,0.8)] h-full relative rounded-[4px] md:rounded-[8px] overflow-hidden border-2 md:border-4 border-black">
             {/* Header */}
             <div className={`px-2 py-2 border-b-2 md:border-b-4 border-black ${item.theme} flex justify-between items-center shadow-[inset_0_-2px_0_rgba(0,0,0,0.1)]`}>
               <h3 className="font-pixel text-[10px] md:text-sm text-black">{item.divisi}</h3>
@@ -1727,7 +1727,7 @@ function AboutPage() {
             
             {/* Content */}
             <div className="p-3 md:p-4 flex-grow flex flex-col relative bg-[#EFEFEF]">
-              <ul className="space-y-1 md:space-y-2 mb-8 font-VT323 text-lg md:text-2xl font-bold flex-grow text-black text-left">
+              <ul className="space-y-1 md:space-y-2 mb-8 font-VT323 text-lg md:text-2xl font-bold text-black text-left">
                 {item.members.map((m, i) => (
                   <li key={i} className="flex justify-between items-center gap-2 pb-1">
                     <span className="truncate">{m.name}</span>
@@ -1741,7 +1741,7 @@ function AboutPage() {
               </ul>
               
               {/* Custom Yes Button */}
-               <div className="w-full flex justify-center -mb-2 mt-4 relative z-10 bottom-2">
+               <div className="w-full flex justify-center -mb-2 mt-auto relative z-10 bottom-2">
                  <button className="bg-[#4CAF50] border-2 md:border-3 border-black px-3 py-1 font-pixel text-[8px] md:text-[10px] text-white shadow-[2px_2px_0_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer">
                     Yes
                  </button>
