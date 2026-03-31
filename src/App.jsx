@@ -1205,6 +1205,8 @@ function HomePage({ navigate }) {
               { src: '/medpart/LOGO IME FT UI.png', alt: 'IME FT UI' },
               { src: '/medpart/logo lomba mahasiswa.jpg', alt: 'Lomba Mahasiswa' },
               { src: '/medpart/Logo HMIF ITERA.jpg', alt: 'HMIF ITERA' },
+              { src: '/medpart/Logo OmahTI (black).png', alt: 'OmahTI' },
+              { src: '/medpart/LOGO HIMATIFUMS.png', alt: 'HIMATIF UMS' },
               { src: '/medpart/LOGO @INFOLOMBA (Untuk Background Poster Warna Gelap).png', alt: 'InfoLomba' },
               { src: '/medpart/logo ile transparan .png', alt: 'ILE' },
               { src: '/medpart/LOGO IME FT UI.png', alt: 'IME FT UI' },
