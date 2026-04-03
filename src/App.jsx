@@ -1818,7 +1818,7 @@ function SponsorshipPage() {
             </ul>
           </div>
           <div className="md:w-1/3 flex justify-center w-full bg-[#E8B42B] p-4 md:p-6 border-2 md:border-4 border-black shadow-[inset_2px_2px_0_rgba(255,255,255,0.5)] md:shadow-[inset_4px_4px_0_rgba(255,255,255,0.5)] mt-6 md:mt-0">
-            <button className="btn-arcade blue w-full py-4 md:py-6 text-sm md:text-lg">
+            <button className="btn-arcade blue w-full py-4 md:py-6 text-sm md:text-lg" onClick={() => window.open('https://drive.google.com/drive/folders/1SjcREmMqAUABgc8RHE7e7uVn7gHY7JSW?usp=sharing', '_blank')}>
               GET PROPOSAL
             </button>
           </div>
