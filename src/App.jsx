@@ -1204,6 +1204,10 @@ function HomePage({ navigate }) {
               { src: '/medpart/logo ile transparan .png', alt: 'ILE' },
               { src: '/medpart/LOGO IME FT UI.png', alt: 'IME FT UI' },
               { src: '/medpart/logo lomba mahasiswa.jpg', alt: 'Lomba Mahasiswa' },
+              { src: '/medpart/BEMFATISDAUNS.png', alt: 'BEM FATISDA UNS' },
+              { src: '/medpart/Logo BEMFASILKOMUNSRI.png', alt: 'BEM FASILKOM UNSRI' },
+              { src: '/medpart/logo himprote.png', alt: 'HIMA PROTE' },
+              { src: '/medpart/Logo HMTI UDINUS.png', alt: 'HIMA TI UDINUS' },
               { src: '/medpart/Logo HMIF ITERA.jpg', alt: 'HMIF ITERA' },
               { src: '/medpart/Logo OmahTI (black).png', alt: 'OmahTI' },
               { src: '/medpart/LOGO HIMATIFUMS.png', alt: 'HIMATIF UMS' },
@@ -1211,6 +1215,10 @@ function HomePage({ navigate }) {
               { src: '/medpart/logo ile transparan .png', alt: 'ILE' },
               { src: '/medpart/LOGO IME FT UI.png', alt: 'IME FT UI' },
               { src: '/medpart/logo lomba mahasiswa.jpg', alt: 'Lomba Mahasiswa' },
+              { src: '/medpart/BEMFATISDAUNS.png', alt: 'BEM FATISDA UNS' },
+              { src: '/medpart/Logo BEMFASILKOMUNSRI.png', alt: 'BEM FASILKOM UNSRI' },
+              { src: '/medpart/logo himprote.png', alt: 'HIMA PROTE' },
+              { src: '/medpart/Logo HMTI UDINUS.png', alt: 'HIMA TI UDINUS' },
             ].map((logo, idx) => (
               <div key={idx} className="bg-white w-32 h-20 sm:w-48 sm:h-32 md:w-64 md:h-40 border-2 md:border-4 border-black flex justify-center items-center overflow-hidden flex-shrink-0 shadow-[4px_4px_0_#000] md:shadow-[8px_8px_0_#000]">
                 <img src={logo.src} alt={logo.alt} className="max-w-full max-h-full object-contain" />
