@@ -1206,6 +1206,12 @@ function HomePage({ navigate }) {
               { src: '/medpart/Logo BEMFASILKOMUNSRI.png', alt: 'BEM FASILKOM UNSRI' },
               { src: '/medpart/logo himprote.png', alt: 'HIMA PROTE' },
               { src: '/medpart/Logo HMTI UDINUS.png', alt: 'HIMA TI UDINUS' },
+              { src: '/medpart/medpart baru/BEMP PTIK UNJ.png', alt: 'BEMP PTIK UNJ' },
+              { src: '/medpart/medpart baru/LOGO BFAST (1).png', alt: 'BFAST' },
+              { src: '/medpart/medpart baru/LOGO HMSI_LOGO AJA_PNG (3).png', alt: 'HMSI' },
+              { src: '/medpart/medpart baru/Logo ScreenShot Ilkom Unnes (bg putih).jpg', alt: 'ScreenShot Ilkom' },
+              { src: '/medpart/medpart baru/mlbb unnes.jpeg', alt: 'MLBB Unnes' },
+              // Duplicate for continuous marquee
               { src: '/medpart/Logo HMIF ITERA.jpg', alt: 'HMIF ITERA' },
               { src: '/medpart/Logo OmahTI (black).png', alt: 'OmahTI' },
               { src: '/medpart/LOGO HIMATIFUMS.png', alt: 'HIMATIF UMS' },
@@ -1217,6 +1223,11 @@ function HomePage({ navigate }) {
               { src: '/medpart/Logo BEMFASILKOMUNSRI.png', alt: 'BEM FASILKOM UNSRI' },
               { src: '/medpart/logo himprote.png', alt: 'HIMA PROTE' },
               { src: '/medpart/Logo HMTI UDINUS.png', alt: 'HIMA TI UDINUS' },
+              { src: '/medpart/medpart baru/BEMP PTIK UNJ.png', alt: 'BEMP PTIK UNJ' },
+              { src: '/medpart/medpart baru/LOGO BFAST (1).png', alt: 'BFAST' },
+              { src: '/medpart/medpart baru/LOGO HMSI_LOGO AJA_PNG (3).png', alt: 'HMSI' },
+              { src: '/medpart/medpart baru/Logo ScreenShot Ilkom Unnes (bg putih).jpg', alt: 'ScreenShot Ilkom' },
+              { src: '/medpart/medpart baru/mlbb unnes.jpeg', alt: 'MLBB Unnes' },
             ].map((logo, idx) => (
               <div key={idx} className="bg-white w-32 h-20 sm:w-48 sm:h-32 md:w-64 md:h-40 border-2 md:border-4 border-black flex justify-center items-center overflow-hidden flex-shrink-0 shadow-[4px_4px_0_#000] md:shadow-[8px_8px_0_#000]">
                 <img src={logo.src} alt={logo.alt} className="max-w-full max-h-full object-contain" />
