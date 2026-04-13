@@ -19,19 +19,17 @@ const eventData = {
     shadowColor: "shadow-[#CC6600]",
     colorStr: "text-[#FF8800]",
     comingSoon: true,
-    shortDesc: "Coming Soon — Detail acara sedang disusun.",
-    fullDesc: "Detail Workshop IT ICONLAB 2026 sedang dalam tahap penyusunan. Nantikan informasi selengkapnya segera!",
-    date: "Coming Soon",
-    prize: "Coming Soon",
+    shortDesc: "COMING SOON",
+    fullDesc: "COMING SOON",
+    date: "COMING SOON",
+    prize: "COMING SOON",
     requirements: [
-      "Coming Soon"
+      "COMING SOON"
     ],
     timeline: [
-      { date: 'TBA', step: 'Coming Soon' },
+      { date: 'TBA', step: 'COMING SOON' },
     ],
-    faqs: [
-      { q: "Kapan detail Workshop akan diumumkan?", a: "Informasi lengkap mengenai Workshop akan segera diumumkan melalui Instagram @iconlab.ilkom." }
-    ],
+    faqs: [],
     contacts: [
       { name: "Sulthan", role: "Narahubung", contact: "+62 813 6927 4302", type: "wa", icon: "S", color: "bg-[#FF1111]" },
       { name: "Zahra", role: "Narahubung", contact: "+62 822 4146 7806", type: "wa", icon: "Z", color: "bg-[#00AAFF]" }
