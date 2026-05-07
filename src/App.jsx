@@ -18,22 +18,30 @@ const eventData = {
     themeColor: "bg-[#FF8800]", // Orange
     shadowColor: "shadow-[#CC6600]",
     colorStr: "text-[#FF8800]",
-    comingSoon: true,
-    shortDesc: "COMING SOON",
-    fullDesc: "COMING SOON",
-    date: "COMING SOON",
-    prize: "COMING SOON",
+    comingSoon: false,
+    shortDesc: "Kuasai masa depan dengan AI & Technopreneurship 5.0! Pelajari integrasi teknik AI dan strategi bisnis inovatif dalam workshop hybrid eksklusif.",
+    fullDesc: "Di era Society 5.0, integrasi antara kecerdasan buatan (AI) dan semangat kewirausahaan teknologi (Technopreneurship) menjadi kunci utama dalam menciptakan solusi berkelanjutan. Workshop 'AI Engineering and Technopreneur 5.0' bertujuan untuk membekali peserta dengan pemahaman mendalam mengenai pengembangan sistem AI yang etis serta strategi membangun bisnis teknologi yang kompetitif. Melalui pendekatan praktis, peserta akan belajar bagaimana mentransformasi ide inovatif menjadi produk nyata yang bernilai tinggi di pasar global, sekaligus memperluas jejaring profesional dengan para ahli di industri.",
+    date: "23 Mei 2026",
+    prize: "Gratis (Seluruh Peserta Lomba), Rp 10.000 (Umum)",
     requirements: [
-      "COMING SOON"
+      "Wawasan mendalam mengenai 'AI engineering and technopreneur 5.0'",
+      "Pengayaan hardskill dan softskill",
+      "Membangun jejaring koneksi profesional",
+      "E-Sertifikat credibel",
+      "Akses materi dan Dokumentasi"
     ],
     timeline: [
-      { date: 'TBA', step: 'COMING SOON' },
+      { date: '6 - 22 Mei 2026', step: 'Pendaftaran' },
+      { date: '23 Mei 2026', step: 'Workshop' },
     ],
-    faqs: [],
+    faqs: [
+      { q: "Di mana lokasi workshop offline?", a: "Workshop offline dilaksanakan di Aula D12 lantai 3 FMIPA UNNES." },
+      { q: "Bagaimana cara mengikuti workshop secara online?", a: "Peserta online akan diberikan link Zoom Meeting setelah melakukan pendaftaran." }
+    ],
     contacts: [
-      { name: "Sulthan", role: "Narahubung", contact: "+62 813 6927 4302", type: "wa", icon: "S", color: "bg-[#FF1111]" },
-      { name: "Zahra", role: "Narahubung", contact: "+62 822 4146 7806", type: "wa", icon: "Z", color: "bg-[#00AAFF]" }
-    ]
+      { name: "Ellsa", role: "Narahubung", contact: "+62 853 8556 4842", type: "wa", icon: "E", color: "bg-[#FF8800]" }
+    ],
+    registrationLink: "https://forms.gle/NWfU7vMHjKxYc9jG7"
   },
   gamedev: {
     id: 'gamedev',
@@ -926,7 +934,7 @@ function Countdown() {
   const [timeLeft, setTimeLeft] = useState({ d: 0, h: 0, m: 0, s: 0 });
 
   useEffect(() => {
-    const targetDate = new Date("2026-04-23T00:00:00").getTime();
+    const targetDate = new Date("2026-05-09T18:00:00").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;
@@ -944,7 +952,7 @@ function Countdown() {
 
   return (
     <div className="flex flex-col items-center mt-6 mb-8 md:mb-12 bg-[#111] border-4 md:border-8 border-gray-800 p-2 md:p-4 shadow-[6px_6px_0_#000] md:shadow-[10px_10px_0_#000] inline-block mx-auto transform -rotate-1 md:-rotate-2 hover:rotate-0 transition-transform relative z-10 w-[95%] sm:w-auto max-w-full">
-      <h3 className="font-pixel text-[#00FF00] text-[10px] md:text-sm mb-2 md:mb-4 animate-pulse">SYSTEM ONLINE IN...</h3>
+      <h3 className="font-pixel text-[#00FF00] text-[10px] md:text-sm mb-2 md:mb-4 animate-pulse">SYSTEM OFFLINE IN...</h3>
       <div className="flex justify-center items-center gap-1 sm:gap-2 md:gap-4">
         {[
           { label: 'DAYS', value: timeLeft.d },
@@ -1184,9 +1192,20 @@ function HomePage({ navigate }) {
 
         <div className="relative w-full overflow-hidden mb-8 md:mb-12">
           <div className="animate-marquee-left flex gap-4 md:gap-8 px-4">
-            {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map((i, idx) => (
-              <div key={idx} className="bg-white w-32 h-20 sm:w-48 sm:h-32 md:w-64 md:h-40 border-2 md:border-4 border-black flex justify-center items-center overflow-hidden flex-shrink-0 shadow-[4px_4px_0_#000] md:shadow-[8px_8px_0_#000] transform -rotate-2 hover:rotate-0 transition">
-                <span className="font-pixel text-sm md:text-xl text-black">SPONSOR {i}</span>
+            {[
+              { src: '/sponsor/99 Konveksi Logo (Gold).PNG', alt: '99 Konveksi' },
+              { src: '/sponsor/Kitalulus (platinum).jpg', alt: 'Kitalulus' },
+              { src: '/sponsor/Nakama Trophy (Bronze).png', alt: 'Nakama Trophy' },
+              // Duplicate for continuous marquee
+              { src: '/sponsor/99 Konveksi Logo (Gold).PNG', alt: '99 Konveksi' },
+              { src: '/sponsor/Kitalulus (platinum).jpg', alt: 'Kitalulus' },
+              { src: '/sponsor/Nakama Trophy (Bronze).png', alt: 'Nakama Trophy' },
+              { src: '/sponsor/99 Konveksi Logo (Gold).PNG', alt: '99 Konveksi' },
+              { src: '/sponsor/Kitalulus (platinum).jpg', alt: 'Kitalulus' },
+              { src: '/sponsor/Nakama Trophy (Bronze).png', alt: 'Nakama Trophy' },
+            ].map((s, idx) => (
+              <div key={idx} className="bg-white w-32 h-20 sm:w-48 sm:h-32 md:w-64 md:h-40 border-2 md:border-4 border-black flex justify-center items-center overflow-hidden flex-shrink-0 shadow-[4px_4px_0_#000] md:shadow-[8px_8px_0_#000] transform -rotate-2 hover:rotate-0 transition p-4">
+                <img src={s.src} alt={s.alt} className="max-w-full max-h-full object-contain" />
               </div>
             ))}
           </div>
@@ -1211,6 +1230,9 @@ function HomePage({ navigate }) {
               { src: '/medpart/medpart baru/LOGO HMSI_LOGO AJA_PNG (3).png', alt: 'HMSI' },
               { src: '/medpart/medpart baru/Logo ScreenShot Ilkom Unnes (bg putih).jpg', alt: 'ScreenShot Ilkom' },
               { src: '/medpart/medpart baru/mlbb unnes.jpeg', alt: 'MLBB Unnes' },
+              { src: '/medpart/midpirt/HIMA fisika.png', alt: 'HIMA Fisika' },
+              { src: '/medpart/midpirt/HIMABIO UNNES.png', alt: 'HIMABIO UNNES' },
+              { src: '/medpart/midpirt/i secret.png', alt: 'i secret' },
               // Duplicate for continuous marquee
               { src: '/medpart/Logo HMIF ITERA.jpg', alt: 'HMIF ITERA' },
               { src: '/medpart/Logo OmahTI (black).png', alt: 'OmahTI' },
@@ -1228,6 +1250,9 @@ function HomePage({ navigate }) {
               { src: '/medpart/medpart baru/LOGO HMSI_LOGO AJA_PNG (3).png', alt: 'HMSI' },
               { src: '/medpart/medpart baru/Logo ScreenShot Ilkom Unnes (bg putih).jpg', alt: 'ScreenShot Ilkom' },
               { src: '/medpart/medpart baru/mlbb unnes.jpeg', alt: 'MLBB Unnes' },
+              { src: '/medpart/midpirt/HIMA fisika.png', alt: 'HIMA Fisika' },
+              { src: '/medpart/midpirt/HIMABIO UNNES.png', alt: 'HIMABIO UNNES' },
+              { src: '/medpart/midpirt/i secret.png', alt: 'i secret' },
             ].map((logo, idx) => (
               <div key={idx} className="bg-white w-32 h-20 sm:w-48 sm:h-32 md:w-64 md:h-40 border-2 md:border-4 border-black flex justify-center items-center overflow-hidden flex-shrink-0 shadow-[4px_4px_0_#000] md:shadow-[8px_8px_0_#000]">
                 <img src={logo.src} alt={logo.alt} className="max-w-full max-h-full object-contain" />
@@ -1421,22 +1446,22 @@ function EventDetailPage({ eventId, navigate }) {
         </div>
 
         {/* Action Buttons */}
-        <div className="relative z-20 flex flex-col sm:flex-row gap-4 md:gap-8 justify-center w-full max-w-2xl px-4">
+        <div className={`relative z-20 flex flex-col sm:flex-row gap-4 md:gap-8 justify-center w-full max-w-2xl px-4 ${eventId === 'workshop' ? 'sm:max-w-md' : ''}`}>
+          {eventId !== 'workshop' && (
+            <a
+              href={ev.rulebookLink || "https://bit.ly/RulebookICONLAB2026"}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-arcade blue w-full !py-4 md:!py-6 text-sm md:text-xl flex items-center justify-center gap-2"
+            >
+              <FileText className="w-5 h-5 md:w-8 md:h-8" /> RULEBOOK
+            </a>
+          )}
           <a
-            href={eventId === 'workshop' ? "#" : (ev.rulebookLink || "https://bit.ly/RulebookICONLAB2026")}
-            target={eventId === 'workshop' ? "_self" : "_blank"}
+            href={ev.registrationLink || GOOGLE_FORM_LINK}
+            target="_blank"
             rel="noreferrer"
-            onClick={(e) => eventId === 'workshop' && e.preventDefault()}
-            className={`btn-arcade blue w-full !py-4 md:!py-6 text-sm md:text-xl flex items-center justify-center gap-2 ${eventId === 'workshop' ? 'opacity-50 cursor-not-allowed grayscale pointer-events-none' : ''}`}
-          >
-            <FileText className="w-5 h-5 md:w-8 md:h-8" /> RULEBOOK
-          </a>
-          <a
-            href={eventId === 'workshop' ? "#" : (ev.registrationLink || GOOGLE_FORM_LINK)}
-            target={eventId === 'workshop' ? "_self" : "_blank"}
-            rel="noreferrer"
-            onClick={(e) => eventId === 'workshop' && e.preventDefault()}
-            className={`btn-arcade green w-full !py-4 md:!py-6 text-sm md:text-xl flex items-center justify-center gap-2 ${eventId === 'workshop' ? 'opacity-50 cursor-not-allowed grayscale pointer-events-none' : ''}`}
+            className="btn-arcade green w-full !py-4 md:!py-6 text-sm md:text-xl flex items-center justify-center gap-2"
           >
             <Trophy className="w-5 h-5 md:w-8 md:h-8" /> JOIN QUEST
           </a>
@@ -1460,7 +1485,7 @@ function EventDetailPage({ eventId, navigate }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           <div className="pixel-window !bg-[#FF1111] p-6 md:p-10 border-4 border-black shadow-[8px_8px_0_#000]">
             <h2 className="font-pixel text-white text-lg md:text-2xl mb-6 flex items-center gap-3">
-              <Star className="w-5 h-5 md:w-8 md:h-8 fill-white" /> REQUIREMENTS
+              <Star className="w-5 h-5 md:w-8 md:h-8 fill-white" /> {eventId === 'workshop' ? 'BENEFITS' : 'REQUIREMENTS'}
             </h2>
             <ul className="space-y-4">
               {ev.requirements.map((req, idx) => (
@@ -1526,38 +1551,40 @@ function EventDetailPage({ eventId, navigate }) {
         <section className="max-w-6xl mx-auto px-4 mb-24 md:mb-40">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10 mb-16">
             <div className="text-center md:text-left">
-              <h2 className="font-pixel text-2xl md:text-5xl text-black drop-shadow-[3px_3px_0_#fff]">REWARDS</h2>
-              <p className="font-VT323 text-2xl md:text-4xl text-black/70 mt-4">Collect high scores & win prizes!</p>
+              <h2 className="font-pixel text-2xl md:text-5xl text-black drop-shadow-[3px_3px_0_#fff]">{eventId === 'workshop' ? 'INVESTMENT' : 'REWARDS'}</h2>
+              <p className="font-VT323 text-2xl md:text-4xl text-black/70 mt-4">{eventId === 'workshop' ? 'Upgrade your knowledge & skills!' : 'Collect high scores & win prizes!'}</p>
             </div>
             <div className="hidden md:block">
               <img src="/coin.svg" alt="Coin" className="w-20 md:w-32 animate-float" />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center items-end">
-            {/* Juara 2 */}
-            <PrizeBox
-              rank="2ND PLACE"
-              color="bg-gray-400"
-              icon={<Trophy className="w-10 h-10 text-white" />}
-              order="order-2 md:order-1"
-            />
-            {/* Juara 1 */}
-            <PrizeBox
-              rank="1ST PLACE"
-              color="bg-[#FFDF00]"
-              icon={<Trophy className="w-16 h-16 text-black" />}
-              featured={true}
-              order="order-1 md:order-2"
-            />
-            {/* Juara 3 */}
-            <PrizeBox
-              rank="3RD PLACE"
-              color="bg-[#CD7F32]"
-              icon={<Trophy className="w-8 h-8 text-white" />}
-              order="order-3"
-            />
-          </div>
+          {eventId !== 'workshop' && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center items-end">
+              {/* Juara 2 */}
+              <PrizeBox
+                rank="2ND PLACE"
+                color="bg-gray-400"
+                icon={<Trophy className="w-10 h-10 text-white" />}
+                order="order-2 md:order-1"
+              />
+              {/* Juara 1 */}
+              <PrizeBox
+                rank="1ST PLACE"
+                color="bg-[#FFDF00]"
+                icon={<Trophy className="w-16 h-16 text-black" />}
+                featured={true}
+                order="order-1 md:order-2"
+              />
+              {/* Juara 3 */}
+              <PrizeBox
+                rank="3RD PLACE"
+                color="bg-[#CD7F32]"
+                icon={<Trophy className="w-8 h-8 text-white" />}
+                order="order-3"
+              />
+            </div>
+          )}
 
           {/* Additional Prizes Description */}
           <div className="mt-12 text-center bg-black/10 p-6 md:p-10 border-4 border-dashed border-black">
@@ -1695,16 +1722,16 @@ function CountdownInternal({ targetDate }) {
 
 function AboutPage() {
   const kepanitiaan = [
-    { divisi: "SC", theme: "bg-[#FF1166]", members: [{name: "Yaafi", role: ""}] },
-    { divisi: "Ketua", theme: "bg-[#FF1166]", members: [{name: "Sulthan", role: ""}] },
-    { divisi: "Sekretaris", theme: "bg-[#FFDF00]", members: [{name: "Jennie", role: "K"}, {name: "Caca", role: "WK"}] },
-    { divisi: "Bendahara", theme: "bg-[#FFDF00]", members: [{name: "Karin", role: "K"}, {name: "Rian", role: "WK"}] },
-    { divisi: "Kreatif", theme: "bg-[#FFDF00]", members: [{name: "Nabila", role: "K"}, {name: "Ardin", role: "WK"}, {name: "Lily", role: ""}, {name: "Hasya", role: ""}, {name: "Uma", role: ""}, {name: "Pelita", role: "I"}] },
-    { divisi: "Perkap", theme: "bg-[#66D9E8]", members: [{name: "Nouval Ar", role: "K"}, {name: "Rizki", role: "WK"}, {name: "Naufal I", role: ""}, {name: "Dariel", role: ""}, {name: "Adjie", role: ""}] },
-    { divisi: "PDD", theme: "bg-[#66D9E8]", members: [{name: "Satria", role: "K"}, {name: "Muti", role: "WK"}, {name: "Aqmar", role: ""}, {name: "Hakim", role: ""}, {name: "Aurel", role: ""}] },
-    { divisi: "Humas", theme: "bg-[#66D9E8]", members: [{name: "Zahra A", role: "K"}, {name: "Silfia", role: "WK"}, {name: "Naila", role: ""}, {name: "Raza", role: ""}, {name: "Putri", role: "I"}] },
-    { divisi: "Acara", theme: "bg-[#8CE99A]", members: [{name: "Elsa", role: "K"}, {name: "Selma", role: "WK"}, {name: "Wira", role: ""}, {name: "Eliz", role: ""}, {name: "Damar", role: ""}, {name: "Reza", role: ""}] },
-    { divisi: "Sponsor", theme: "bg-[#8CE99A]", members: [{name: "Fardhan", role: "K"}, {name: "Docil", role: "WK"}, {name: "Tika", role: ""}, {name: "Danda", role: ""}, {name: "Azza", role: ""}] },
+    { divisi: "SC", theme: "bg-[#FF1166]", members: [{ name: "Yaafi", role: "" }] },
+    { divisi: "Ketua", theme: "bg-[#FF1166]", members: [{ name: "Sulthan", role: "" }] },
+    { divisi: "Sekretaris", theme: "bg-[#FFDF00]", members: [{ name: "Jennie", role: "K" }, { name: "Caca", role: "WK" }] },
+    { divisi: "Bendahara", theme: "bg-[#FFDF00]", members: [{ name: "Karin", role: "K" }, { name: "Rian", role: "WK" }] },
+    { divisi: "Kreatif", theme: "bg-[#FFDF00]", members: [{ name: "Nabila", role: "K" }, { name: "Ardin", role: "WK" }, { name: "Lily", role: "" }, { name: "Hasya", role: "" }, { name: "Uma", role: "" }, { name: "Pelita", role: "I" }] },
+    { divisi: "Perkap", theme: "bg-[#66D9E8]", members: [{ name: "Nouval Ar", role: "K" }, { name: "Rizki", role: "WK" }, { name: "Naufal I", role: "" }, { name: "Dariel", role: "" }, { name: "Adjie", role: "" }] },
+    { divisi: "PDD", theme: "bg-[#66D9E8]", members: [{ name: "Satria", role: "K" }, { name: "Muti", role: "WK" }, { name: "Aqmar", role: "" }, { name: "Hakim", role: "" }, { name: "Aurel", role: "" }] },
+    { divisi: "Humas", theme: "bg-[#66D9E8]", members: [{ name: "Zahra A", role: "K" }, { name: "Silfia", role: "WK" }, { name: "Naila", role: "" }, { name: "Raza", role: "" }, { name: "Putri", role: "I" }] },
+    { divisi: "Acara", theme: "bg-[#8CE99A]", members: [{ name: "Elsa", role: "K" }, { name: "Selma", role: "WK" }, { name: "Wira", role: "" }, { name: "Eliz", role: "" }, { name: "Damar", role: "" }, { name: "Reza", role: "" }] },
+    { divisi: "Sponsor", theme: "bg-[#8CE99A]", members: [{ name: "Fardhan", role: "K" }, { name: "Docil", role: "WK" }, { name: "Tika", role: "" }, { name: "Danda", role: "" }, { name: "Azza", role: "" }] },
   ];
 
   return (
@@ -1746,7 +1773,7 @@ function AboutPage() {
                 <span className="font-pixel text-[8px] md:text-[10px] text-white">x</span>
               </div>
             </div>
-            
+
             {/* Content */}
             <div className="p-3 md:p-4 flex-grow flex flex-col relative bg-[#EFEFEF]">
               <ul className="space-y-1 md:space-y-2 mb-8 font-VT323 text-lg md:text-2xl font-bold text-black text-left">
@@ -1761,13 +1788,13 @@ function AboutPage() {
                   </li>
                 ))}
               </ul>
-              
+
               {/* Custom Yes Button */}
-               <div className="w-full flex justify-center -mb-2 mt-auto relative z-10 bottom-2">
-                 <button className="bg-[#4CAF50] border-2 md:border-3 border-black px-3 py-1 font-pixel text-[8px] md:text-[10px] text-white shadow-[2px_2px_0_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer">
-                    Yes
-                 </button>
-               </div>
+              <div className="w-full flex justify-center -mb-2 mt-auto relative z-10 bottom-2">
+                <button className="bg-[#4CAF50] border-2 md:border-3 border-black px-3 py-1 font-pixel text-[8px] md:text-[10px] text-white shadow-[2px_2px_0_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer">
+                  Yes
+                </button>
+              </div>
             </div>
           </div>
         ))}
